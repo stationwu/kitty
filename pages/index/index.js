@@ -38,7 +38,8 @@ var getLatestInfo = function (that, code) {
       that.setData({
         kitties: list,
         wallet: res.data.wallet,
-        hidden: true
+        hidden: true,
+        isFirst: false
       });
     }
   });
@@ -82,7 +83,7 @@ Page({
   },
   onShow:function(e){
     var that = this;
-    if (wx.getStorageSync('openid') !== "" && that.data.isFirst === true ){
+    if (wx.getStorageSync('openid') !== "" && that.data.isFirst === false ){
       
       that.setData({
         kitties: [],
@@ -90,6 +91,25 @@ Page({
       });
       getLatestInfo(that, wx.getStorageSync('openid') );
     }
+  },
+  getUserInfo:function(e){
+    var that = this;
+    wx.getUserInfo({
+      success: res => {
+        app.globalData.userInfo = res.userInfo
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+        wx.login({
+          success: function (res) {
+            var code = res.code;
+            // --------- 发送凭证 ------------------
+            loginBackend(that, code);
+          }
+        });
+      }
+    })
   },
   imageTap: function(e){
     wx.navigateTo({
