@@ -1,0 +1,14 @@
+<!--pages/detail/detail.wxml-->
+<image style='width:100%;height:370px;background-color:#5dae' src="https://stationwu.cn/{{kitty.imageUrl}}" />
+<view>
+<label>{{kitty.gender}}</label>
+</view>
+<view>
+<label>{{kitty.birthday.year}}-{{kitty.birthday.monthValue}}-{{kitty.birthday.dayOfMonth}}</label>
+</view>
+<view>
+<label>{{kitty.price}} 小鱼干</label>
+</view>
+<view class="weui-footer weui-footer_fixed-bottom">
+  <button type="primary" bindtap="pruchase">购买</button>
+</view>
