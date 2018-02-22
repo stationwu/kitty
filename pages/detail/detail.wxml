@@ -1,5 +1,5 @@
 <!--pages/detail/detail.wxml-->
-<image mode='widthFix' style='widthFix: 500rpx;background-color:#5dae' src="https://stationwu.cn/{{kitty.imageUrl}}" />
+<image mode='widthFix' style='width:100%;background-color:#5dae' src="https://stationwu.cn/{{kitty.imageUrl}}" />
 <view>
 <label>{{kitty.gender}}</label>
 </view>
