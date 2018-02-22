@@ -7,14 +7,10 @@ var loginBackend = function (that,code) {
     url: "https://stationwu.cn/User/" + code,
     success: function (res) {
       //console.info(that.data.list);
-      var list = [];
-      for (var i = 0; i < res.data.kitties.length; i++) {
-        list.push(res.data.kitties[i]);
-      }
       wx.setStorageSync('openid', res.data.openCode);
       //page++;
       that.setData({
-        kitties: list,
+        kitties: res.data.kitties,
         wallet: res.data.wallet,
         hidden: true,
         isFirst: false
@@ -30,13 +26,10 @@ var getLatestInfo = function (that, code) {
     success: function (res) {
       //console.info(that.data.list);
       var list = [];
-      for (var i = 0; i < res.data.kitties.length; i++) {
-        list.push(res.data.kitties[i]);
-      }
       wx.setStorageSync('openid', res.data.openCode);
       //page++;
       that.setData({
-        kitties: list,
+        kitties: res.data.kitties,
         wallet: res.data.wallet,
         hidden: true,
         isFirst: false

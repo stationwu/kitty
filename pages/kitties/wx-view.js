@@ -6,12 +6,12 @@ var GetList = function (that) {
     url: "https://stationwu.cn/Market?size=15&page=" + that.data.page,
     success: function (res) {
       //console.info(that.data.list);
-
-      for (var i = 0; i < res.data.length; i++) {
-        that.data.market.push(res.data[i]);
+      var list = [];
+      for (var i = res.data.length -1; i >= 0 ; i--) {
+        list.push(res.data[i]);
       }
       that.setData({
-        market: that.data.market
+        market: list
       });
     }
   });

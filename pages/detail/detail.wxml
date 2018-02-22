@@ -9,6 +9,7 @@
 <view class="weui-cells weui-cells_after-title">
 <input class="weui-input" type='number' value='{{price}}'></input>
 </view>
-<view class="weui-footer weui-footer_fixed-bottom">
-  <button type="primary" bindtap="sale">{{button}}</button>
+<view class="weui-footer weui-footer_fixed-bottom flex-row" style="display:flex;">
+  <button type="primary" style='width:50%' bindtap="sale">{{button}}</button>
+  <button type="primary" style='width:50%' bindtap="recover">残忍丢弃</button>
 </view>

@@ -75,5 +75,15 @@ Page({
         }
       });
     }
+  },
+  recover: function(){
+    wx.request({
+      url: "https://stationwu.cn/Recover?openCode=" + wx.getStorageSync('openid') + "&kittyId=" + this.data.id + "&price=" + this.data.price,
+      success: function (res) {
+        wx.navigateBack({
+          delta: 1
+        })
+      }
+    });
   }
 })
