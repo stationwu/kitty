@@ -1,0 +1,15 @@
+<!--pages/detail/detail.wxml-->
+<image mode='widthFix' style='width:100%;background-color:#5dae' src="https://stationwu.cn/{{kitty.imageUrl}}" />
+<view>
+<label>{{kitty.gender}}</label>
+</view>
+<view>
+<label>{{kitty.birthday.year}}-{{kitty.birthday.monthValue}}-{{kitty.birthday.dayOfMonth}}</label>
+</view>
+<view class="weui-cells weui-cells_after-title">
+<input class="weui-input" type='number' value='{{price}}'></input>
+</view>
+<view class="weui-footer weui-footer_fixed-bottom flex-row" style="display:flex;">
+  <button type="primary" style='width:50%' bindtap="sale">{{button}}</button>
+  <button type="primary" style='width:50%' bindtap="recover">残忍丢弃</button>
+</view>
