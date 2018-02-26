@@ -3,7 +3,7 @@
         <scroll-view style="height: 600px;" lower-threshold="50" class="weui-grids" scroll-y="true" bindscrolltolower="searchScrollLower">
             <block wx:for="{{market}}" wx:key="*this">
                 <navigator url="" class="weui-grid" hover-class="weui-grid_active" >
-                    <image class="flex-item" src="https://stationwu.cn/{{item.imageUrl}}"  bindtap="imageTap" data-id="{{item.id}}"/>
+                    <image mode='widthFix' style='width:100%' src="https://stationwu.cn/{{item.imageUrl}}"  bindtap="imageTap" data-id="{{item.id}}"/>
                     <text style='font-size: 13px;display: flex;justify-content: center;'>{{item.price}}小鱼干</text>
                 </navigator>
             </block>
