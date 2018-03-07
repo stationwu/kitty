@@ -85,5 +85,10 @@ Page({
         })
       }
     });
-  }
+  },
+  passInput : function (e) {
+    this.setData({
+      price: e.detail.value
+    })
+  },
 })

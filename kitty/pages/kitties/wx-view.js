@@ -39,6 +39,10 @@ Page({
   onShow: function () {
     //  在页面展示之后先获取一次数据
     var that = this;
+    that.setData({
+      market: [],
+      page: 0
+    });
     GetList(that);
   },
   bindDownLoad: function () {

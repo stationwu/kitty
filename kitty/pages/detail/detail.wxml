@@ -7,7 +7,7 @@
 <label>{{kitty.birthday.year}}-{{kitty.birthday.monthValue}}-{{kitty.birthday.dayOfMonth}}</label>
 </view>
 <view class="weui-cells weui-cells_after-title">
-<input class="weui-input" type='number' value='{{price}}'></input>
+<input class="weui-input" type='number' value='{{price}}' bindinput="passInput"></input>
 </view>
 <view class="weui-footer weui-footer_fixed-bottom flex-row" style="display:flex;">
   <button type="primary" style='width:50%' bindtap="sale">{{button}}</button>
